@@ -27,7 +27,7 @@ namespace dotnet_code_challenge.Test.Queries
         {
             // Arrange
             var FeedId = Guid.NewGuid().ToString();
-            var feed = new Feed { FeedId = FeedId, Races = new[] { new Race { Horses = new[] { new Horse() } } } };
+            var feed = new Feed { FeedId = FeedId, Races = new[] { new Race { RaceNumber = 1, Horses = new[] { new Horse() } } } };
 
             A.CallTo(() => _repository.Read()).Returns(new[] { feed });
             var request = new GetHorsesWithPriceRequest { FeedId = FeedId };

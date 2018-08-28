@@ -32,7 +32,7 @@ namespace dotnet_code_challenge.Processors
                     return new Race
                     {
                         Name = fixture.FixtureName,
-                        RaceNumber = index,
+                        RaceNumber = index + 1,
                         Horses = selections.Select(selection =>
                         {
                             return new Horse

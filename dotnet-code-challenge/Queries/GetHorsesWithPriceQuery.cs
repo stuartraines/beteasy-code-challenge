@@ -21,7 +21,7 @@ namespace dotnet_code_challenge.Queries
 
             var feed = feeds.Single(x => x.FeedId == request.FeedId);
 
-            var race = feed.Races.First();
+            var race = feed.Races.Single(x => x.RaceNumber == request.RaceNumber);
 
             var horses = race.Horses.OrderBy(x => x.Price);
 
