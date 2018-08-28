@@ -16,7 +16,7 @@ namespace dotnet_code_challenge
     class Program
     {
         //TODO: Move into IoC
-        private static readonly IEnumerable<IFeedProcessor> _feedProcessors = new List<IFeedProcessor> { new JsonFeedProcessor() };
+        private static readonly IEnumerable<IFeedProcessor> _feedProcessors = new List<IFeedProcessor> { new JsonFeedProcessor(), new XmlFeedProcessor() };
         private static readonly IFeedRepository _repository = new FeedRepository();
         private static readonly ICommand<PersistFeedRequest> _command = new PersistFeedCommand(_repository);
         private static readonly IPathResolver _pathResolver = new VirtualPathResolver();

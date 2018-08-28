@@ -16,7 +16,7 @@ namespace dotnet_code_challenge.Test.Renderers
         [SetUp]
         public void Setup()
         {
-            //_writer = A.Fake<dotnet_code_challenge.Services.IOutputWriter>();
+            _writer = A.Fake<Utils.IOutputWriter>();
             _subject = new HorsesByPriceRenderer(_writer);
         }
 
