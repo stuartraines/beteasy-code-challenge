@@ -16,6 +16,8 @@
     <Folder Include="Commands\" />
     <Folder Include="Processors\" />
     <Folder Include="Utils\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
