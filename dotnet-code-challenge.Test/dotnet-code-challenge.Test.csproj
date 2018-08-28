@@ -24,8 +24,15 @@
 
   <ItemGroup>
     <Folder Include="Services\" />
+    <Folder Include="Processors\" />
+    <Folder Include="TestData\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="UnitTest1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="TestData\TestJson.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
