@@ -22,4 +22,10 @@
     <ProjectReference Include="..\dotnet-code-challenge\dotnet-code-challenge.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="UnitTest1.cs" />
+  </ItemGroup>
 </Project>
