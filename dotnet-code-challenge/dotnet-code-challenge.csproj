@@ -20,6 +20,7 @@
     <Folder Include="Repositories\" />
     <Folder Include="Queries\" />
     <Folder Include="Responses\" />
+    <Folder Include="Renderers\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,6 +4,7 @@ using dotnet_code_challenge.Commands;
 using dotnet_code_challenge.Exceptions;
 using dotnet_code_challenge.Processors;
 using dotnet_code_challenge.Queries;
+using dotnet_code_challenge.Renderers;
 using dotnet_code_challenge.Repositories;
 using dotnet_code_challenge.Requests;
 using dotnet_code_challenge.Responses;
@@ -22,6 +23,7 @@ namespace dotnet_code_challenge
         private static readonly IFileReader _fileReader = new FileReader();
         private static readonly IFeedIngester _ingester = new RacesFeedIngester(_feedProcessors, _command, _pathResolver, _fileReader);
         private static readonly IQuery<GetHorsesWithPriceRequest, GetHorsesWithPriceResponse> _query = new GetHorsesWithPriceQuery(_repository);
+        private static readonly IRenderer<GetHorsesWithPriceResponse> _renderer = new HorsesByPriceRenderer(new ConsoleOutputWriter());
 
         static void Main(string[] args)
         {
@@ -80,6 +82,7 @@ namespace dotnet_code_challenge
                 var response = _query.Query(request);
 
                 // 3. Display the results
+                _renderer.Render(response);
             }
         }
 
