@@ -18,6 +18,8 @@
     <Folder Include="Utils\" />
     <Folder Include="Commands\" />
     <Folder Include="Repositories\" />
+    <Folder Include="Queries\" />
+    <Folder Include="Responses\" />
   </ItemGroup>
 
   <ItemGroup>

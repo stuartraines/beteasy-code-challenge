@@ -27,6 +27,7 @@
     <Folder Include="Processors\" />
     <Folder Include="TestData\" />
     <Folder Include="Commands\" />
+    <Folder Include="Queries\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="UnitTest1.cs" />
