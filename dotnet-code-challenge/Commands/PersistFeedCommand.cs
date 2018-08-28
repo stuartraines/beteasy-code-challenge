@@ -1,4 +1,5 @@
-﻿using dotnet_code_challenge.Repositories;
+﻿using System.Linq;
+using dotnet_code_challenge.Repositories;
 using dotnet_code_challenge.Requests;
 
 namespace dotnet_code_challenge.Commands
@@ -14,6 +15,11 @@ namespace dotnet_code_challenge.Commands
 
         public void Execute(PersistFeedRequest request)
         {
+            if (_repository.Read().Any(x => x.FeedId == request.Feed.FeedId))
+            {
+                return;
+            }
+
             _repository.Persist(request.Feed);
         }
     }

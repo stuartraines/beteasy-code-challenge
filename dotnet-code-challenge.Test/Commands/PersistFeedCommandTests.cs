@@ -31,5 +31,19 @@ namespace dotnet_code_challenge.Test.Commands
             // Assert
             A.CallTo(() => _repository.Persist(feed)).MustHaveHappenedOnceExactly();
         }
+
+        [Test]
+        public void GivenRecordExistsTHenShouldNotPersist()
+        {
+            // Arrange
+            var feed = new Feed();
+            A.CallTo(() => _repository.Read()).Returns(new[] { feed });
+
+            // Act
+            _subject.Execute(new Requests.PersistFeedRequest { Feed = feed });
+
+            // Assert
+            A.CallTo(() => _repository.Persist(A<Feed>.Ignored)).MustNotHaveHappened();
+        }
     }
 }
